@@ -1,1 +1,23 @@
-
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: purchaseserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: purchaseserver
+  template: 
+    metadata: 
+      labels: 
+        app: purchaseserver
+    spec: 
+      containers: 
+        - 
+          image: "purchaseserver:latest"
+          name: purchaseserver
+          ports: 
+            - 
+              containerPort: 8086
+              name: purchaseserver
+          
