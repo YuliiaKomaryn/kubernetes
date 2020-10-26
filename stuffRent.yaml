@@ -1,1 +1,23 @@
-
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: stuffrentserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: stuffrentsevice
+  template: 
+    metadata: 
+      labels: 
+        app: stuffrentserver
+    spec: 
+      containers: 
+        - 
+          image: "stuffrentserver:latest"
+          name: stuffrentserver
+          ports: 
+            - 
+              containerPort: 8087
+              name: stuffrentserver
+          
