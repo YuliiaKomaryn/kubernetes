@@ -1,1 +1,43 @@
-
+apiVersion: version1
+kind: Service
+metadata:
+  name: server-int-connection
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+  selector:
+    app: mediator
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: clientserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8085
+  selector:
+    app: clientserver
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: purchaseserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8086
+  selector:
+    app: purchaseserver
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: stuffrentserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8087
+  selector:
+    app: stuffrentservice
