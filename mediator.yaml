@@ -18,5 +18,5 @@ spec:
           name: mediator
           ports: 
             - 
-              containerPort: 8082
+              containerPort: 8082 
               name: mediator
